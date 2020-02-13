@@ -39,4 +39,46 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent.nav["img-src"]);
+
+let navigation = document.querySelectorAll("nav>a");
+for ( let i = 0; i < 6; i++ ) {
+  navigation[i].textContent = siteContent.nav["nav-item-" + i];
+  navigation[i].style.color = "green";
+  navigation[i].style.textDecoration = "none";
+}
+
+let ctaH1 = document.querySelector("h1");
+ctaH1.textContent = siteContent.cta.h1;
+
+let ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent.cta.button;
+
+let ctaLogo = document.getElementById("cta-img");
+ctaLogo.setAttribute('src', siteContent.cta["img-src"]);
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let content_h4 = document.querySelectorAll(".text-content>h4");
+let content_keys = ["features", "about", "services", "product", "vision"];
+for (let i = 0; i < 5; i++) {
+  content_h4[i].textContent = siteContent["main-content"][content_keys[i] + "-h4"];
+}
+
+let content_p = document.querySelectorAll(".text-content>p");
+for (let i = 0; i < 5; i++) {
+  content_p[i].textContent = siteContent["main-content"][content_keys[i] + "-content"];
+}
+
+let contact_h4 = document.querySelector(".contact>h4");
+contact_h4.textContent = siteContent.contact["contact-h4"];
+
+let contact_p = document.querySelectorAll(".contact>p");
+let contactKeywords = ["address", "phone", "email"];
+for (let i = 0; i < 3; i++) {
+  contact_p[i].textContent =  siteContent.contact[contactKeywords[i]];
+}
+
+let footer_p = document.querySelector("footer>p");
+footer_p.textContent = siteContent.footer.copyright;
